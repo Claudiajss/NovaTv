@@ -15,15 +15,15 @@ return new class extends Migration
     {
         Schema::create('movies', function (Blueprint $table) {
             $table->id();
-            $table->String('name');
+            $table->string('name');
             $table->text('description');
             $table->enum('quality', ['cam', 'FullHd', '720p', '1080p', '4k']);
-            $table->String('image');
+            $table->string('image');
             $table->date('release_year');
-            $table->integer('reproduction_number');
-            $table->String('language');
-            $table->String('video_link');
-            $table->String('download_link');
+            $table->integer('reproduction_number')->default(0);
+            $table->string('language');
+            $table->string('video_link');
+            $table->string('download_link');
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

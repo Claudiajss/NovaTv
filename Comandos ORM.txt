@@ -1,0 +1,85 @@
+comandos ORM
+
+CREATE
+++++++++++++++++++++++++++++++++++++++++++
+
+use App\Models\Role;
+$role = new Role;
+$role->name = 'Admin';
+$role->description = 'Administraodr del sistema';
+$role->save();
+
+
+use  App\Models\User;
+$user = new User ;
+$user->fullname = 'Claudia Arenas';
+$user->email = 'claudianeth@gmail.com';
+$user->phone = '3042837007';
+$user->photo = 'image/no-photo.png';
+$user->password = bcrypt ('12345678');
+$user->role_id =1;
+$user->save();
+
+use  App\Models\Category;
+$user = new Category ;
+$user->name = 'drama';
+$user->description  = 'El drama en el cine presenta historias serias, en las que prevalece el dialogo y la acción orientadas a generar tensión y presentar pasiones conflictivas más que generar humor.'
+$user->save();
+
+use  App\Models\Movies;
+$movie = new Movie ;
+$movie->name = 'Hacia la Libertad';        
+$movie->description = 'Hacia la libertad es una película dirigida por Antoine Fuqua con Will Smith, Ben Foster, Mustafa Shakir, Ronnie Gene Blevins, Charmaine Bingwa .';
+$movie->quality = 'drama';   
+$movie->image = 'img/libertad.png';
+$movie->release_year ='2022';
+$movie->languaje= 'ingles';
+$movie->languaje= 'ingles';
+$movie->download_link= 'https://www.youtube.com/watch?v=j3cwoGfWLx4';
+$movie->user_id= 1;
+$movie->category_id= 1;
+$movie->save();
+
+
+
+
+
+
+
+
+
+
+
+READ
+++++++++++++++++++++++++++++++++++++++++++++
+
+use  App\Models\U ser;
+$users = User::all(); //obtiene todos los registros
+$user = User:: find(1); // obtiene un registro en especifico
+$user = User::find([1,2,3]); // obtiene varios registros
+$user = User::findOrFail(200); // obtiene un registro y si no ex ste lanza una excepciones
+$count = User::count(); // cuenta el numero de registros de la base de datos
+$max = User::all()->max('id'); 
+$min = User::all()->min('id'); 
+$users = User::all()->take(5);
+//Where
+$admins = User::all Where('role_id ,1')->get();
+
+
+
+UPDATE
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+$use = User::find(1);
+$user->email ='claudianeth@hotmail.com';
+$user->save();
+
+
+
+DELETE
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+$use = User::find(1);
+$user-> delete(); // esta forma
+
+$user::destroy(1):// o directamente
