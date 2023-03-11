@@ -45,6 +45,6 @@ class MovieSeeder extends Seeder
 
     }
 
-        //
+    
     
 }
