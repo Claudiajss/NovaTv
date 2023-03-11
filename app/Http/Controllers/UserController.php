@@ -16,7 +16,8 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        add($users);
+        //add($users);
+        return view ('test')->with('users',$users);
 
         //retorna la vista inyectando todos los usuarios
     }

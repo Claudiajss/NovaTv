@@ -20,6 +20,14 @@ Route::get('/', function () {
 
 });
 
+//Route::get('/test', function () {
+  // $day='sunday';
+  // return view('test')->with('day',$day);
+
+//});
+
+
+
  Route::resources([
     'users' => UserController::class
 
