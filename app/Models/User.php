@@ -46,7 +46,7 @@ class User extends Authenticatable
     ];
 
     public function getAllUsers(){
-        return user:: all();
+        return User::all();
     }
 
     public function getUser($id){
@@ -55,10 +55,10 @@ class User extends Authenticatable
 
     // Relaciones
     public function movies(){
-        return $this->hasMany('App\Movies');
+        return $this->hasMany('App\Models\Movie');
     }
 
-    public function role (){
-        return $this->belongsTo('App\Role');
+    public function role(){
+        return $this->belongsTo('App\Models\Role');
     }
 }

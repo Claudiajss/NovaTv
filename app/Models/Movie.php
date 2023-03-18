@@ -9,7 +9,7 @@ class Movie extends Model
 {
     use HasFactory;
 
-     /**
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
@@ -20,15 +20,13 @@ class Movie extends Model
         'quality',
         'image',
         'release_year',
-        'reproduction_numbre',
-        'languaje',
+        'reproduction_number',
+        'language',
         'video_link',
         'download_link',
         'user_id',
         'category_id',
-       
     ];
-
     public function getAllMovies(){
         return Movie::all();
     }
@@ -37,13 +35,12 @@ class Movie extends Model
         return Movie::find($id);
     }
 
+    // Relaciones
     public function user(){
         return $this->belongsTo('App\User');
     }
 
-    public function category (){
+    public function category(){
         return $this->belongsTo('App\Category');
     }
-
-
 }

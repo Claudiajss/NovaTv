@@ -23,7 +23,7 @@ class RoleSeeder extends Seeder
         
     
             $role = new Role;
-            $role->name = 'Luisa';
+            $role->name = 'Guest';
             $role->description = 'Invitado del sistema';
             $role->save();
         

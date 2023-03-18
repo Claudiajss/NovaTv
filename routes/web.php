@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\MovieController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,14 +30,13 @@ Route::get('/', function () {
 
 
  Route::resources([
-    'users' => UserController::class
+    'users' => UserController::class,
+    'categories' => CategoryController::class,
+    'movies' => MovieController::class
 
  ]);
 
- Route::resources([
-    'categories' => CategoryController::class
-
- ]);
+ 
 
 Auth::routes();
 
