@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'NovaTv  - Home')
 
 @section('content')
     <div class="row">
