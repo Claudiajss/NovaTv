@@ -1,7 +1,5 @@
 @extends('layouts.app')
-@section('title', 'NovaTv  - Registro')
-
-
+@section('title', 'NovaTV - Registro')
 
 @section('content')
 <div class="container">
